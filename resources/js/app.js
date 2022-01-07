@@ -1,5 +1,3 @@
-import Login from "./pages/Login";
-
 require("./bootstrap");
 import React, {Fragment, lazy, Suspense} from "react";
 import {Route} from "react-router";
@@ -11,6 +9,7 @@ import ReactDOM, {render} from "react-dom";
 import Home from "./pages/Home";
 import ChatScene from "./components/ChatScene";
 import keycloak from "./keycloak";
+import SingleLogin from "./pages/SingleLogin";
 const { ReactKeycloakProvider } = require('@react-keycloak/web')
 
 render(
@@ -19,8 +18,8 @@ render(
             <Routes>
                 <Route path="/">
                     <Route element={<Home/>} path="/"      index  />
-                    <Route element={<Login/>} path={"/login"}         />
                     <Route element={<ChatScene/>} path="/chat"        />
+                    <Route element={<SingleLogin/>} path="/login"        />
                 </Route>
             </Routes>
         </ReactKeycloakProvider>
