@@ -21,9 +21,7 @@ render(
                 <Route path="/">
                     <Route element={<Home/>} path="/"      index  />
                     <Route element={<ChatScene/>} path="/chat"        />
-                    <Route element={<SingleLogin/>} path="/login"        />
-
-                    <Route element={<Login/>} path="/anologin"        />
+                    <Route element={<Login/>} path="/login"        />
                 </Route>
             </Routes>
         </ReactKeycloakProvider>
