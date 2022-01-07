@@ -11,6 +11,7 @@ import ReactDOM, {render} from "react-dom";
 import Home from "./pages/Home";
 import ChatScene from "./components/ChatScene";
 import keycloak from "./keycloak";
+import Home2 from "./pages/Home2";
 const { ReactKeycloakProvider } = require('@react-keycloak/web')
 
 render(
@@ -19,6 +20,8 @@ render(
             <Routes>
                 <Route path="/">
                     <Route element={<Home/>} path="/"      index  />
+                    <Route element={<Home2/>} path="/2"      index  />
+
                     <Route element={<ChatScene/>} path="/chat"        />
                     <Route element={<Login/>} path="/login"        />
                 </Route>
