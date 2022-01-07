@@ -19,6 +19,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/session', [\App\Http\Controllers\Controller::class, 'getSession']);
+
+Route::apiResource('/cms/notice', \App\Http\Controllers\NoticeController::class);
+
 Route::post('/join', [\App\Http\Controllers\ChatController::class, 'join']);
 Route::post('/leave', [\App\Http\Controllers\ChatController::class, 'leave']);
 Route::post('/send', [\App\Http\Controllers\ChatController::class, 'send']);

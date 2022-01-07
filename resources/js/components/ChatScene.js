@@ -1,6 +1,7 @@
-import Chat, {Bubble, Button, useMessages} from '@chatui/core';
+import Chat, {Bubble, Button, Notice, useMessages} from '@chatui/core';
 import '@chatui/core/dist/index.css';
 import {useEffect, useRef, useState} from "react";
+import NoticeSection from "./NoticeSection";
 
 const ChatScene = () => {
     const { messages, appendMsg, setTyping } = useMessages([]);
@@ -8,6 +9,7 @@ const ChatScene = () => {
     const msgInterval  = useRef(-1);
     const lastId       = useRef(-1);
     const [ roomId, setRoomId ] = useState('loading');
+    const [ notice, setNotice ] = useState([])
     const {id, setId} = useState('');
     const init = useRef(true);
 
@@ -58,8 +60,14 @@ const ChatScene = () => {
             init.current = false;
 
             const fetchData = async () => {
-                let res = await axios.get('/api/session')
+                //let res = await axios.get('/api/session')
+                //console.log(res.data)
+
+                let res = await axios.get('/api/cms/notice')
                 console.log(res.data)
+                res?.data?.forEach(r=>{
+                    setNotice(old => [...old, r]);
+                })
             };
             fetchData().then();
 
@@ -108,6 +116,7 @@ const ChatScene = () => {
 
     return (
         <>
+            <NoticeSection notices={notice}/>
             <Chat
                 navbar={{ title: `ChatRoom ${roomId}` }}
                 messages={messages}

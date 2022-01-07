@@ -6,7 +6,6 @@ import {
 } from "react-router-dom";
 import ReactDOM, {render} from "react-dom";
 import Home from "./components/Home";
-import Second from "./components/Second";
 import ChatScene from "./components/ChatScene";
 
 render(
@@ -14,7 +13,6 @@ render(
         <Routes>
             <Route path="/">
                 <Route index element={<Home />} />
-                <Route element={<Second />} />
                 <Route element={<ChatScene />} path="/chat"/>
             </Route>
         </Routes>
