@@ -77,9 +77,10 @@ export default function SingleLogin() {
                         <Typography component="h1" variant="h5">
                             Sign in {keycloak?.authenticated}
                         </Typography>
-                        <Box component="form" noValidate onSubmit={login} sx={{ mt: 1 }}>
+                        <Box sx={{ mt: 1 }}>
                             <Button
-                                type="submit"
+                                type="button"
+                                onClick={login}
                                 fullWidth
                                 variant="contained"
                                 sx={{ mt: 3, mb: 2 }}

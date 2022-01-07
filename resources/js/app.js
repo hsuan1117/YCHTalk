@@ -1,3 +1,5 @@
+import Login from "./pages/Login";
+
 require("./bootstrap");
 import React, {Fragment, lazy, Suspense} from "react";
 import {Route} from "react-router";
@@ -20,6 +22,8 @@ render(
                     <Route element={<Home/>} path="/"      index  />
                     <Route element={<ChatScene/>} path="/chat"        />
                     <Route element={<SingleLogin/>} path="/login"        />
+
+                    <Route element={<Login/>} path="/anologin"        />
                 </Route>
             </Routes>
         </ReactKeycloakProvider>
