@@ -11,7 +11,6 @@ import ReactDOM, {render} from "react-dom";
 import Home from "./pages/Home";
 import ChatScene from "./components/ChatScene";
 import keycloak from "./keycloak";
-import SingleLogin from "./pages/SingleLogin";
 const { ReactKeycloakProvider } = require('@react-keycloak/web')
 
 render(
