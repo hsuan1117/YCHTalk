@@ -1,7 +1,9 @@
 import React, {Component, useEffect, useRef, useState} from "react";
 import {Link} from "react-router-dom";
+import {useKeycloak} from "@react-keycloak/web";
 
 const Home = () => {
+    const { keycloak } = useKeycloak()
     const {id, setId} = useState('');
     const init = useRef(true);
     useEffect(() => {
@@ -24,7 +26,17 @@ const Home = () => {
                 <div className="col-md-8">
                     <div className="card">
                         <div className="card-body">Home</div>
+
+                        <div>User is {!keycloak?.authenticated ? 'NOT ' : ''} authenticated</div>
+
+                        {!!keycloak?.authenticated && (
+                            <button type="button" onClick={() => keycloak.logout()}>
+                                Logout
+                            </button>
+                        )}
+                    <hr/>
                         <Link to="/chat">Chat</Link>
+                        <Link to="/login">Login</Link>
                         <p>{id}</p>
                     </div>
                 </div>

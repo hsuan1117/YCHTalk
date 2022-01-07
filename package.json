@@ -29,7 +29,9 @@
     },
     "dependencies": {
         "@chatui/core": "^1.2.3",
+        "@mui/material": "^5.2.7",
         "@react-keycloak/web": "^3.4.0",
+        "keycloak-js": "^16.1.0",
         "react-router": "^6.2.1",
         "react-router-dom": "^6.2.1"
     }
