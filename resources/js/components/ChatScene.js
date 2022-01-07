@@ -118,7 +118,7 @@ const ChatScene = () => {
         <>
             <NoticeSection notices={notice}/>
             <Chat
-                navbar={{ title: `ChatRoom ${roomId}` }}
+                navbar={{ title: `聊天室(${roomId})` }}
                 messages={messages}
                 renderMessageContent={renderMessageContent}
                 onSend={handleSend}

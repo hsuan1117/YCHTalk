@@ -13,7 +13,7 @@ const Login = () => {
     }, []);
     const location = useLocation()
     const currentLocationState = location.state || {
-        from: { pathname: '/home' },
+        from: { pathname: '/' },
     }
     const { keycloak } = useKeycloak()
 
