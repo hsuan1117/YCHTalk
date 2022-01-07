@@ -39,7 +39,7 @@ const ChatScene = () => {
 
     const leaveRoom = async () => {
         let res = await axios.post('/api/leave', {  withCredentials: true })
-        window.alert('left')
+        window.alert('離開啦 找找下一個吧')
     }
 
     const joinRoom = async () => {
@@ -47,7 +47,7 @@ const ChatScene = () => {
         //console.log(res.data)
         console.log(res.data?.users?.length)
         if(res.data?.users?.length === 2){
-            window.alert("found room")
+            window.alert("找到聊天對象啦^^ 請記得離開前幫我按一下「離開」🥺")
             setRoomId(res.data.id)
             clearInterval(waitInterval.current)
         }
@@ -88,7 +88,7 @@ const ChatScene = () => {
         } ,{ withCredentials: true})
 
         if(res?.data?.status === "error"){
-            window.alert('chatroom is ended')
+            window.alert('對方離開了餒')
             clearInterval(msgInterval.current)
             return;
         }
@@ -96,7 +96,7 @@ const ChatScene = () => {
         res.data?.all?.forEach(m=>{
             appendMsg({
                 type: 'text',
-                content: { text: m?.content?.content ?? "NOT RENDERED" },
+                content: { text: m?.content?.content ?? "目前版本不支援此訊息" },
                 position: m?.position,
                 createdAt: m?.created_at
             });
