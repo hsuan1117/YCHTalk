@@ -8,23 +8,39 @@ import {
     Routes
 } from "react-router-dom";
 import ReactDOM, {render} from "react-dom";
-import Home from "./pages/Home";
-import ChatScene from "./components/ChatScene";
+import ChatScene from "./pages/ChatScene";
 import keycloak from "./keycloak";
-import Home2 from "./pages/Home2";
-const { ReactKeycloakProvider } = require('@react-keycloak/web')
+import Home from "./pages/Home";
+import Footer from "./components/Footer";
+import Nav from "./components/Nav";
+import {Outlet} from "react-router";
+import GlobalStyles from "@mui/material/GlobalStyles";
+import CssBaseline from "@mui/material/CssBaseline";
+const {ReactKeycloakProvider} = require('@react-keycloak/web')
+
+function LayoutWithNavBar(){
+    return (
+        <>
+            <Nav />
+            <Outlet />
+            <Footer/>
+        </>
+    );
+}
 
 render(
     <BrowserRouter>
         <ReactKeycloakProvider authClient={keycloak}>
+            <GlobalStyles styles={{ul: {margin: 0, padding: 0, listStyle: 'none'}}}/>
+            <CssBaseline/>
             <Routes>
-                <Route path="/">
-                    <Route element={<Home/>} path="/"      index  />
-                    <Route element={<Home2/>} path="/2"      index  />
+                <Route path="/" element={<LayoutWithNavBar/>}>
+                    <Route element={<Home/>} path="/" index/>
 
-                    <Route element={<ChatScene/>} path="/chat"        />
-                    <Route element={<Login/>} path="/login"        />
+                    <Route element={<Login/>} path="/login"/>
                 </Route>
+
+                <Route element={<ChatScene/>} path="/chat"/>
             </Routes>
         </ReactKeycloakProvider>
     </BrowserRouter>,

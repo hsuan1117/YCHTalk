@@ -15,6 +15,8 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import {Navigate, useLocation} from "react-router-dom";
 import {useKeycloak} from "@react-keycloak/web";
 import {useCallback} from "react";
+import CardContent from "@mui/material/CardContent";
+import Card from "@mui/material/Card";
 
 function Copyright(props) {
     return (
@@ -41,53 +43,61 @@ export default function SignIn() {
         keycloak?.login()
     }, [keycloak])
 
-    if (keycloak?.authenticated)return <Navigate to={currentLocationState?.from} />
+    if (keycloak?.authenticated) {
+        return <Navigate to={currentLocationState?.from}/>
+    }
 
     return (
         <ThemeProvider theme={theme}>
             <Container component="main" maxWidth="xs">
                 <CssBaseline />
-                <Box
-                    sx={{
-                        marginTop: 8,
-                        display: 'flex',
-                        flexDirection: 'column',
-                        alignItems: 'center',
-                    }}
-                >
-                    <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-                        <LockOutlinedIcon />
-                    </Avatar>
-                    <Typography component="h1" variant="h5">
-                        Sign in With&nbsp;<b>HsuanSSO</b>
-                    </Typography>
-                    <Box sx={{ mt: 1 }}>
-                        <Button
-                            type="button"
-                            onClick={login}
-                            fullWidth
-                            variant="contained"
-                            sx={{ mt: 3, mb: 2 }}
+
+                <Card sx={{ minWidth: 275, mt: 8 }} >
+
+                    <CardContent>
+                        <Box
+                            sx={{
+                                mt:1,
+                                display: 'flex',
+                                flexDirection: 'column',
+                                alignItems: 'center',
+                            }}
                         >
-                            Sign In
-                        </Button>
-                        <Grid container spacing={2}
-                              justifyContent="center"
-                              alignItems="center">
-                            <Grid item  xs={12} textAlign={'center'}>
-                                <Link href="#" variant="body2">
-                                    Forgot password?
-                                </Link>
-                            </Grid>
-                            <Grid item  xs={12}  textAlign={'center'}>
-                                <Link href="#" variant="body2">
-                                    Don't have an account? Sign Up
-                                </Link>
-                            </Grid>
-                        </Grid>
-                    </Box>
-                </Box>
-                <Copyright sx={{ mt: 8, mb: 4 }} />
+                            <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+                                <LockOutlinedIcon />
+                            </Avatar>
+                            <Typography component="h1" variant="h5">
+                                Sign in With&nbsp;<b>HsuanSSO</b>
+                            </Typography>
+                            <Box sx={{ mt: 1 }}>
+                                <Button
+                                    type="button"
+                                    onClick={login}
+                                    fullWidth
+                                    variant="contained"
+                                    sx={{ mt: 3, mb: 2 }}
+                                >
+                                    Sign In
+                                </Button>
+                                <Grid container spacing={2}
+                                      justifyContent="center"
+                                      alignItems="center">
+                                    <Grid item  xs={12} textAlign={'center'}>
+                                        <Link href="#" variant="body2">
+                                            Forgot password?
+                                        </Link>
+                                    </Grid>
+                                    <Grid item  xs={12}  textAlign={'center'}>
+                                        <Link href="#" variant="body2">
+                                            Don't have an account? Sign Up
+                                        </Link>
+                                    </Grid>
+                                </Grid>
+                            </Box>
+                        </Box>
+                    </CardContent>
+                </Card>
+
             </Container>
         </ThemeProvider>
     );
