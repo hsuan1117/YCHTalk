@@ -15,7 +15,9 @@
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.4",
-        "spatie/laravel-permission": "^5.4"
+        "spatie/laravel-permission": "^5.4",
+        "robsontenorio/laravel-keycloak-guard": "@dev",
+        "jcrowe/bad-word-filter": "@dev"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.10",
@@ -67,6 +69,10 @@
         {
             "type": "path",
             "url": "./packages/robsontenorio/laravel-keycloak-guard"
+        },
+        {
+            "type": "path",
+            "url": "./packages/jcrowe/bad-word-filter"
         }
     ],
     "minimum-stability": "dev",

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "06a0c487848f7f0f7fbaac71dd60e358",
+    "content-hash": "4570f90b3c52d605f8e571f508158834",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -68,12 +68,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/beyondcode/laravel-websockets.git",
-                "reference": "171480dee2a68b4d853a4c966aad6881dfbede51"
+                "reference": "fd2070fc3d28696247acceacc4f40667828f3016"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beyondcode/laravel-websockets/zipball/171480dee2a68b4d853a4c966aad6881dfbede51",
-                "reference": "171480dee2a68b4d853a4c966aad6881dfbede51",
+                "url": "https://api.github.com/repos/beyondcode/laravel-websockets/zipball/fd2070fc3d28696247acceacc4f40667828f3016",
+                "reference": "fd2070fc3d28696247acceacc4f40667828f3016",
                 "shasum": ""
             },
             "require": {
@@ -155,7 +155,7 @@
                 "issues": "https://github.com/beyondcode/laravel-websockets/issues",
                 "source": "https://github.com/beyondcode/laravel-websockets/tree/master"
             },
-            "time": "2022-01-05T14:59:37+00:00"
+            "time": "2022-01-06T11:31:21+00:00"
         },
         {
             "name": "brick/math",
@@ -1292,6 +1292,63 @@
             "time": "2020-10-16T08:27:54+00:00"
         },
         {
+            "name": "firebase/php-jwt",
+            "version": "v5.5.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/firebase/php-jwt.git",
+                "reference": "83b609028194aa042ea33b5af2d41a7427de80e6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/firebase/php-jwt/zipball/83b609028194aa042ea33b5af2d41a7427de80e6",
+                "reference": "83b609028194aa042ea33b5af2d41a7427de80e6",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": ">=4.8 <=9"
+            },
+            "suggest": {
+                "paragonie/sodium_compat": "Support EdDSA (Ed25519) signatures when libsodium is not present"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Firebase\\JWT\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Neuman Vong",
+                    "email": "neuman+pear@twilio.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Anant Narayanan",
+                    "email": "anant@php.net",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A simple library to encode and decode JSON Web Tokens (JWT) in PHP. Should conform to the current spec.",
+            "homepage": "https://github.com/firebase/php-jwt",
+            "keywords": [
+                "jwt",
+                "php"
+            ],
+            "support": {
+                "issues": "https://github.com/firebase/php-jwt/issues",
+                "source": "https://github.com/firebase/php-jwt/tree/v5.5.1"
+            },
+            "time": "2021-11-08T20:18:51+00:00"
+        },
+        {
             "name": "fruitcake/laravel-cors",
             "version": "v2.0.5",
             "source": {
@@ -1756,6 +1813,46 @@
                 }
             ],
             "time": "2021-10-06T17:43:30+00:00"
+        },
+        {
+            "name": "jcrowe/bad-word-filter",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "./packages/jcrowe/bad-word-filter",
+                "reference": "db88876e75c58b92c9133ad6739eac12bde656b2"
+            },
+            "require": {
+                "illuminate/support": ">=4.0.0",
+                "php": ">=4.0.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "0.9.*",
+                "phpunit/phpunit": "4.5.1",
+                "satooshi/php-coveralls": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/migrations"
+                ],
+                "psr-0": {
+                    "JCrowe\\BadWordFilter\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jonathan Crowe",
+                    "email": "jcrowe206@gmail.com"
+                }
+            ],
+            "description": "PHP Bad word filtering. Checks for the existence of a bad word in a string or array.",
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "laravel/framework",
@@ -4542,6 +4639,65 @@
             "time": "2021-07-11T12:37:55+00:00"
         },
         {
+            "name": "robsontenorio/laravel-keycloak-guard",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "./packages/robsontenorio/laravel-keycloak-guard",
+                "reference": "0609189c1d40c93d3d357c1685894330f7d74ad0"
+            },
+            "require": {
+                "firebase/php-jwt": "^5.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^3.7@dev",
+                "phpunit/phpunit": "^7.3@dev"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "KeycloakGuard\\KeycloakGuardServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "KeycloakGuard\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "KeycloakGuard\\Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "vendor/bin/phpunit"
+                ],
+                "test-coverage": [
+                    "phpunit --coverage-html coverage"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Robson Tenório"
+                }
+            ],
+            "description": "🔑 Simple Keycloak Guard for Laravel",
+            "homepage": "https://github.com/robsontenorio/laravel-keycloak-guard",
+            "keywords": [
+                "keycloak",
+                "laravel"
+            ],
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
             "name": "spatie/laravel-permission",
             "version": "5.4.2",
             "source": {
@@ -7256,21 +7412,21 @@
     "packages-dev": [
         {
             "name": "barryvdh/laravel-ide-helper",
-            "version": "v2.10.0",
+            "version": "v2.11.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/barryvdh/laravel-ide-helper.git",
-                "reference": "73b1012b927633a1b4cd623c2e6b1678e6faef08"
+                "reference": "f2a7f9d84f628cb50e1b0dc302f10d2ba945b0ea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/barryvdh/laravel-ide-helper/zipball/73b1012b927633a1b4cd623c2e6b1678e6faef08",
-                "reference": "73b1012b927633a1b4cd623c2e6b1678e6faef08",
+                "url": "https://api.github.com/repos/barryvdh/laravel-ide-helper/zipball/f2a7f9d84f628cb50e1b0dc302f10d2ba945b0ea",
+                "reference": "f2a7f9d84f628cb50e1b0dc302f10d2ba945b0ea",
                 "shasum": ""
             },
             "require": {
                 "barryvdh/reflection-docblock": "^2.0.6",
-                "composer/composer": "^1.6 || ^2",
+                "composer/composer": "^1.10.23 || ^2.1.9",
                 "doctrine/dbal": "^2.6 || ^3",
                 "ext-json": "*",
                 "illuminate/console": "^8",
@@ -7334,15 +7490,19 @@
             ],
             "support": {
                 "issues": "https://github.com/barryvdh/laravel-ide-helper/issues",
-                "source": "https://github.com/barryvdh/laravel-ide-helper/tree/v2.10.0"
+                "source": "https://github.com/barryvdh/laravel-ide-helper/tree/v2.11.0"
             },
             "funding": [
+                {
+                    "url": "https://fruitcake.nl",
+                    "type": "custom"
+                },
                 {
                     "url": "https://github.com/barryvdh",
                     "type": "github"
                 }
             ],
-            "time": "2021-04-09T06:17:55+00:00"
+            "time": "2022-01-03T20:47:54+00:00"
         },
         {
             "name": "barryvdh/reflection-docblock",
@@ -7474,16 +7634,16 @@
         },
         {
             "name": "composer/composer",
-            "version": "2.2.3",
+            "version": "2.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/composer.git",
-                "reference": "3c92ba5cdc7d48b7db2dcd197e6fa0e8fa6d9f4a"
+                "reference": "8a5ad75194f901e3b39ece4bbd22cbdabc79ae8f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/composer/zipball/3c92ba5cdc7d48b7db2dcd197e6fa0e8fa6d9f4a",
-                "reference": "3c92ba5cdc7d48b7db2dcd197e6fa0e8fa6d9f4a",
+                "url": "https://api.github.com/repos/composer/composer/zipball/8a5ad75194f901e3b39ece4bbd22cbdabc79ae8f",
+                "reference": "8a5ad75194f901e3b39ece4bbd22cbdabc79ae8f",
                 "shasum": ""
             },
             "require": {
@@ -7553,7 +7713,7 @@
             "support": {
                 "irc": "ircs://irc.libera.chat:6697/composer",
                 "issues": "https://github.com/composer/composer/issues",
-                "source": "https://github.com/composer/composer/tree/2.2.3"
+                "source": "https://github.com/composer/composer/tree/2.2.4"
             },
             "funding": [
                 {
@@ -7569,7 +7729,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-12-31T11:18:53+00:00"
+            "time": "2022-01-08T11:30:42+00:00"
         },
         {
             "name": "composer/metadata-minifier",
@@ -8217,16 +8377,16 @@
         },
         {
             "name": "filp/whoops",
-            "version": "2.14.4",
+            "version": "2.14.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filp/whoops.git",
-                "reference": "f056f1fe935d9ed86e698905a957334029899895"
+                "reference": "a63e5e8f26ebbebf8ed3c5c691637325512eb0dc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filp/whoops/zipball/f056f1fe935d9ed86e698905a957334029899895",
-                "reference": "f056f1fe935d9ed86e698905a957334029899895",
+                "url": "https://api.github.com/repos/filp/whoops/zipball/a63e5e8f26ebbebf8ed3c5c691637325512eb0dc",
+                "reference": "a63e5e8f26ebbebf8ed3c5c691637325512eb0dc",
                 "shasum": ""
             },
             "require": {
@@ -8276,7 +8436,7 @@
             ],
             "support": {
                 "issues": "https://github.com/filp/whoops/issues",
-                "source": "https://github.com/filp/whoops/tree/2.14.4"
+                "source": "https://github.com/filp/whoops/tree/2.14.5"
             },
             "funding": [
                 {
@@ -8284,7 +8444,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-10-03T12:00:00+00:00"
+            "time": "2022-01-07T12:00:00+00:00"
         },
         {
             "name": "hamcrest/hamcrest-php",
@@ -10636,7 +10796,9 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "beyondcode/laravel-websockets": 20
+        "beyondcode/laravel-websockets": 20,
+        "robsontenorio/laravel-keycloak-guard": 20,
+        "jcrowe/bad-word-filter": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

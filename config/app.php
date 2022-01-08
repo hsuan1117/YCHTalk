@@ -165,6 +165,7 @@ return [
         /*
          * Package Service Providers...
          */
+        JCrowe\BadWordFilter\Providers\BadWordFilterServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -230,6 +231,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+        'BadWordFilter' => JCrowe\BadWordFilter\Facades\BadWordFilter::class
     ],
 
 ];

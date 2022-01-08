@@ -6,13 +6,13 @@ use App\Models\Chat;
 use App\Models\ChatUser;
 use App\Models\Message;
 use App\Models\User;
-use http\Env\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
+use JCrowe\BadWordFilter\Facades\BadWordFilter;
 
 class ChatController extends Controller
 {
@@ -121,7 +121,7 @@ class ChatController extends Controller
                 'sender'  => $user->id,
                 'content' => [
                     'type' => $type,
-                    'content' => $msg
+                    'content' => BadWordFilter::clean($msg)
                 ]
             ]);
             return response([
