@@ -323,7 +323,7 @@ class BadWordFilter
         }
         $w = json_decode(file_get_contents(storage_path('bannedwords.json')));
         foreach($w as $c){
-            $string = Str::replace($c, mb_substr($c,0,1, 'utf-8').Str::repeat('*', mb_strlen($c)-1),  $string);
+            $string = Str::replace($c, mb_substr($c,0,1, 'utf-8').Str::repeat('*', (mb_strlen($c)-1)<0?0:(mb_strlen($c)-1)),  $string);
         }
         return $string;
     }
